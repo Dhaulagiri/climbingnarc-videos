@@ -7,7 +7,7 @@ export default DS.Model.extend({
   title_plain: DS.attr('string'),
   date: DS.attr('date'),
 
-  climbers: DS.hasMany('climber', { async: false }),
-  areas: DS.hasMany('area', { async: false }),
-  categories: DS.hasMany('category', { async: false }),
+  climbers: DS.hasMany('climber'),
+  areas: DS.hasMany('area'),
+  categories: DS.hasMany('category')
 });
