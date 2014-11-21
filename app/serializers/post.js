@@ -8,11 +8,10 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	},
 
 	extractArray: function (store, type, payload) {
-	var posts = payload.posts;
+		var posts = payload.posts;
 
-	payload = { posts: posts };	
-	return this._super(store, type, payload);
-
+		payload = { posts: posts };	
+		return this._super(store, type, payload);
   	},
 	extractSingle: function () {
   	}
