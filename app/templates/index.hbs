@@ -1,7 +1,8 @@
 In the index
 
 {{#each}}
-  {{title_plain}} <br/>
+  {{title_plain}} - {{{embed_html}}}<br/>
+  {{lazy-video url=embed_url }}
 {{/each}}
 
 {{outlet}}

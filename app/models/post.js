@@ -6,6 +6,7 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   title_plain: DS.attr('string'),
   date: DS.attr('date'),
+  embed_url: DS.attr('string'),
 
   climbers: DS.hasMany('climber'),
   areas: DS.hasMany('area'),
