@@ -1,5 +1,4 @@
 import DS from 'ember-data';
-import ajax from 'ic-ajax';
 
 export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	attrs : {
@@ -15,7 +14,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	    post.embed_url = post.custom_fields.embed;
 	  });
 
-		payload = { posts: posts };	
+		payload = { posts: posts };
 		return this._super(store, type, payload);
   },
 	extractSingle: function () {
