@@ -35,6 +35,7 @@
     "ember-cli-divshot": "^0.1.5"
   },
   "dependencies": {
-    "ember-lazy-video": "^0.1.2"
+    "ember-lazy-video": "^0.1.2",
+    "pretender": "^0.4.2"
   }
 }
