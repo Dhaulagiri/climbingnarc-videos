@@ -5,7 +5,6 @@ export default Ember.ArrayController.extend({
 
   actions: {
     loadVideos: function(params) {
-      debugger
       var page = this.get('page') + 1;
       this.set('page', page)
       var params = { page: page };
