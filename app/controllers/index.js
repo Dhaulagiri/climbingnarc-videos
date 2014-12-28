@@ -4,9 +4,9 @@ export default Ember.ArrayController.extend({
   page: 1,
 
   actions: {
-    loadVideos: function(params) {
+    loadVideos: function() {
       var page = this.get('page') + 1;
-      this.set('page', page)
+      this.set('page', page);
       var params = { page: page };
       this.store.find('post', params);
     }
