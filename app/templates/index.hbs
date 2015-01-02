@@ -1,11 +1,11 @@
+{{#each}}
 <div class="row">
-  {{#each}}
-  <div class="col-md-4">
-    <h4 class="text-center">{{title_plain}}</h4>
+  <div class="col-xs-12">
+    <h4 class="text-center">{{#link-to 'video' this}}{{title}}{{/link-to}}</h4>
     {{lazy-video url=embed_url classNames="embed-responsive embed-responsive-16by9"}}
   </div>
-  {{/each}}
 </div>
+{{/each}}
 
 <p><button type="button" class="btn btn-primary" {{action "loadVideos" this}}>Load More</button></p>
 
