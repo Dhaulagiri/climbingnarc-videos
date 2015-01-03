@@ -20,6 +20,6 @@ test('post relationship', function() {
   var relationship = Ember.get(Category, 'relationshipsByName').get('post');
 
   equal(relationship.key, 'post');
-  equal(relationship.kind, 'belongsTo');
+  equal(relationship.kind, 'hasMany');
 
 });
