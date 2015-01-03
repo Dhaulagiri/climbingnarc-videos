@@ -1,0 +1,20 @@
+
+<div class="search-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        {{input type="search"
+        value=searchInput
+        placeholder="Find Video"
+        class="form-control search-field"
+        autofocus="autofocus"}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  {{#link-to 'videos'}}Videos{{/link-to}}
+</div>
+
+{{outlet}}
