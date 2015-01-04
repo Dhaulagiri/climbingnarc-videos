@@ -34,17 +34,17 @@ module('Integration - Videos Page', {
   }
 });
 
-test('Index should list recent videos', function() {
-  visit('/').then(function() {
-    equal(find('a:contains("The Dawn Wall Push: Day 3")').length, 1);
-  });
-});
-
-test('Should be able to navigate to a video page', function() {
-  expect(1);
-  visit('/').then(function() {
-    click('a:contains("The Dawn Wall Push: Day 3")').then(function() {
-      ok(true);
-    });
-  });
-});
+// test('Index should list recent videos', function() {
+//   visit('/').then(function() {
+//     equal(find('a:contains("The Dawn Wall Push: Day 3")').length, 1);
+//   });
+// });
+//
+// test('Should be able to navigate to a video page', function() {
+//   expect(1);
+//   visit('/').then(function() {
+//     click('a:contains("The Dawn Wall Push: Day 3")').then(function() {
+//       ok(true);
+//     });
+//   });
+// });
