@@ -25,7 +25,7 @@ module('Integration - Videos Page', {
       console.log(verb);
       console.log(path);
       console.log(request);
-    }
+    };
 
   },
   teardown: function() {
