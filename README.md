@@ -1,7 +1,12 @@
 # Climbingnarc-videos
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This application provides an Ember.js frontend for the [ClimbingNarc.com videos section](http://climbingnarc.com/videos).  It leverages a RESTful API exposed via the [WP-API plugin](https://github.com/WP-API/WP-API) to provide data to the Ember app.
+
+The overaching goal of this project is to build a much more responsive and interactive video browsing experience.  Key items I would like to implement include:
+
+- [ ] Index list of current videos that either has inifinite scrolling to load additional videos or some sort of user directed action that can load additional videos.
+- [ ] Video detail page that includes the video, commments, ratings and related videos.  The most difficult of these is the ratings function which will require customization of the Wordpress API.
+- [ ] Video search to let users search generically as well as by specific climbers or climbing areas (each video is tagged through Wordpress's custom taxonomies with the climber(s) and climbing area(s) featured).  A basic version of this is implemented, but it would be much more powerful if we could filter on specific climbers/areas.
 
 ## Prerequisites
 
@@ -38,10 +43,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
