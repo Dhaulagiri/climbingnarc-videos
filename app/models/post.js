@@ -30,5 +30,30 @@ export default DS.Model.extend({
   climbers: DS.hasMany('climber'),
   areas: DS.hasMany('area'),
   categories: DS.hasMany('category'),
-  tags: DS.hasMany('tag')
+  tags: DS.hasMany('tag'),
+
+  provider: DS.attr(),
+  videoId: DS.attr(),
+
+  parsedVideoUrl: function () {   // adapted from http://stackoverflow.com/questions/9552883
+    function getParm(url, base) {
+      var re = new RegExp("(\\?|&)" + base + "\\=([^&]*)(&|$)");
+      var matches = url.match(re);
+      if (matches) {
+        return(matches[2]);
+      } else {
+        return("");
+      }
+    }
+
+    var matches;
+    var url = this.get('embed_url');
+    if (url.indexOf("youtube.com/watch") !== -1) {
+      this.set('provider', 'youtube');
+      this.set('videoId', getParm(url, "v"));
+    } else if (matches = url.match(/vimeo.com\/(\d+)/)) {
+      this.set('provider', 'vimeo');
+      this.set('videoId', matches[1]);
+    }
+  }.observes('embed_url').on('didLoad')
 });
