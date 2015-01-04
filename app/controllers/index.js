@@ -7,10 +7,19 @@ export default Ember.ArrayController.extend({
 
   isFiltering: false,
   query: '',
+  climberQuery: '',
 
   updateQuery: function (value) {
     this.set('isFiltering', false);
     this.set('query', value || '');
+  },
+  updateClimberQuery: function (value) {
+    this.set('isFiltering', false);
+    this.set('climberQuery', value || '');
+  },
+  updateAreaQuery: function (value) {
+    this.set('isFiltering', false);
+    this.set('areaQuery', value || '');
   },
 
   // read in search input and set a debounce to prevent constant searching
@@ -24,17 +33,47 @@ export default Ember.ArrayController.extend({
     return value;
   }.property('query'),
 
+  climberSearchInput: function(key, value) {
+    if (arguments.length > 1) {
+      this.set('isFiltering', true);
+      Ember.run.debounce(this, this.updateClimberQuery, value, 350);
+    } else {
+      value = this.get('climberQuery');
+    }
+    return value;
+  }.property('climberQuery'),
+
+  areaSearchInput: function(key, value) {
+    if (arguments.length > 1) {
+      this.set('isFiltering', true);
+      Ember.run.debounce(this, this.updateAreaQuery, value, 350);
+    } else {
+      value = this.get('areaQuery');
+    }
+    return value;
+  }.property('areaQuery'),
+
   // actually filter from the store based on the search query
   searchResults: function() {
     this.set('isFiltering', false);
 
     var searchTerm = this.get('query');
-    if (searchTerm) {
-      return this.store.find('post', {'type' : 'videos', 'filter[s]': searchTerm});
+    var climberSearchTerm = this.get('climberQuery');
+    var areaSearchTerm = this.get('areaQuery');
+
+    if (searchTerm || climberSearchTerm || areaSearchTerm) {
+      return this.store.find('post',
+        {
+          'type' : 'videos',
+          'filter[s]' : searchTerm,
+          'filter[climbers]' : climberSearchTerm,
+          'filter[climbing-areas]' : areaSearchTerm
+        }
+      );
     } else {
       return this.store.find('post', {'type' : 'videos', 'filter[posts_per_page]': 24});
     }
-  }.property('query'),
+  }.property('query', 'climberQuery', 'areaQuery'),
 
   actions: {
     loadVideos: function() {
