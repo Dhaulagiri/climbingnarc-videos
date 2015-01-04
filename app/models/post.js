@@ -30,5 +30,6 @@ export default DS.Model.extend({
   climbers: DS.hasMany('climber'),
   areas: DS.hasMany('area'),
   categories: DS.hasMany('category'),
-  tags: DS.hasMany('tag')
+  tags: DS.hasMany('tag'),
+  comments: DS.hasMany('comment')
 });

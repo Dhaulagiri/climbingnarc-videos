@@ -6,7 +6,7 @@ import Ember from 'ember';
 
 moduleForModel('climber', 'Climber', {
   // Specify the other units that are required for this test.
-  needs: ['model:post', 'model:category', 'model:area']
+  needs: ['model:post', 'model:category', 'model:area', 'model:tag', 'model:comment', 'model:user']
 });
 
 test('it exists', function() {
@@ -17,9 +17,9 @@ test('it exists', function() {
 
 test('post relationship', function() {
   var Climber = this.store().modelFor('climber');
-  var relationship = Ember.get(Climber, 'relationshipsByName').get('post');
+  var relationship = Ember.get(Climber, 'relationshipsByName').get('posts');
 
-  equal(relationship.key, 'post');
+  equal(relationship.key, 'posts');
   equal(relationship.kind, 'hasMany');
 
 });

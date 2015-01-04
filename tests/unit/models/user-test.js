@@ -2,10 +2,11 @@ import {
   moduleForModel,
   test
 } from 'ember-qunit';
+import Ember from 'ember';
 
-moduleForModel('tag', 'Tag', {
+moduleForModel('user', 'User', {
   // Specify the other units that are required for this test.
-  needs: ['model:post', 'model:climber', 'model:category', 'model:area', 'model:comment', 'model:user']
+  needs: ['model:comment', 'model:post']
 });
 
 test('it exists', function() {

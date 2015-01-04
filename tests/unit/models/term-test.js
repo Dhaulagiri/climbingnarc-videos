@@ -5,7 +5,7 @@ import {
 
 moduleForModel('term', 'Term', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:post', 'model:climber', 'model:area', 'model:category', 'model:tag', 'model:comment']
 });
 
 test('it exists', function() {
