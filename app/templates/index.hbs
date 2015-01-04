@@ -1,4 +1,3 @@
-
 <div class="search-wrapper">
   <div class="container">
     <div class="row">
@@ -13,8 +12,38 @@
   </div>
 </div>
 
-<div class="text-center">
-  {{#link-to 'videos'}}Videos{{/link-to}}
-</div>
+<div class="container" id="video-list">
+  {{#if isFiltering}}
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 class="loading text-center">Searching...</h3>
+      </div>
+    </div>
+    {{else}}
+    {{#if searchResults}}
+      <div class="row">
+        {{#each searchResults}}
 
+        <div class="col-md-6">
+          {{lazy-video url=embed_url classNames="embed-responsive embed-responsive-16by9"}}
+          <h4 class="text-center">{{#link-to 'video' this}}{{title}}{{/link-to}}</h4>
+        </div>
+
+        {{/each}}
+      </div>
+    {{else}}
+      {{#if query}}
+      <div class="row">
+        <div class="col-xs-12">
+          <h3 class="loading text-center">No results found...</h3>
+        </div>
+      </div>
+      {{/if}}
+    {{/if}}
+  {{/if}}
+
+  <!-- <div class="row">
+  <p><button type="button" class="btn btn-primary" {{action "loadVideos" this}}>Load More</button></p>
+</div> -->
+</div>
 {{outlet}}

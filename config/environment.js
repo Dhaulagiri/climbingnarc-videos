@@ -18,7 +18,9 @@ module.exports = function(environment) {
       // when it is created
     },
     contentSecurityPolicy: {
-      'connect-src': "'self' http://climbingnarc.com"
+      'connect-src': "'self' http://climbingnarc.com",
+      'font-src': "'self' http://*.gstatic.com",
+      'style-src': "'self' http://*.googleapis.com"
     }
   };
 
