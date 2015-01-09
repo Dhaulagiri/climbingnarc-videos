@@ -4,8 +4,8 @@ This application provides an Ember.js frontend for the [ClimbingNarc.com videos 
 
 The overarching goal of this project is to build a much more responsive and interactive video browsing experience.  Key items I would like to implement include:
 
-- [ ] Index list of current videos that either has inifinite scrolling to load additional videos or some sort of user directed action that can load additional videos.
-- [ ] Video detail page that includes the video, commments, ratings and related videos.  The most difficult of these is the ratings function which will require customization of the Wordpress API.
+- [ ] Index list of current videos that either has infinite scrolling to load additional videos or some sort of user directed action that can load additional videos.
+- [ ] Video detail page that includes the video, comments, ratings and related videos.  The most difficult of these is the ratings function which will require customization of the Wordpress API.
 - [ ] Video search to let users search generically as well as by specific climbers or climbing areas (each video is tagged through Wordpress's custom taxonomies with the climber(s) and climbing area(s) featured).  A basic version of this is implemented, but it would be much more powerful if we could filter on specific climbers/areas.
 
 ## Prerequisites
