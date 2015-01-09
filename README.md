@@ -2,7 +2,7 @@
 
 This application provides an Ember.js frontend for the [ClimbingNarc.com videos section](http://climbingnarc.com/videos).  It leverages a RESTful API exposed via the [WP-API plugin](https://github.com/WP-API/WP-API) to provide data to the Ember app.
 
-The overaching goal of this project is to build a much more responsive and interactive video browsing experience.  Key items I would like to implement include:
+The overarching goal of this project is to build a much more responsive and interactive video browsing experience.  Key items I would like to implement include:
 
 - [ ] Index list of current videos that either has inifinite scrolling to load additional videos or some sort of user directed action that can load additional videos.
 - [ ] Video detail page that includes the video, commments, ratings and related videos.  The most difficult of these is the ratings function which will require customization of the Wordpress API.
