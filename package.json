@@ -37,6 +37,6 @@
     "glob": "^4.0.5"
   },
   "dependencies": {
-    "ember-lazy-video": "^0.1.1"
+    "ember-lazy-video": "^0.2.0"
   }
 }
