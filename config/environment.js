@@ -21,7 +21,8 @@ module.exports = function(environment) {
       'connect-src': "'self' http://climbingnarc.com http://vimeo.com",
       'font-src': "'self' http://*.gstatic.com",
       'style-src': "'self' 'unsafe-inline' http://*.googleapis.com",
-      'img-src': "'self' http://*.vimeocdn.com http://*.youtube.com"
+      'img-src': "'self' http://*.vimeocdn.com http://*.youtube.com",
+      'frame-src': "'self' http://*.youtube.com http://*.vimeo.com"
     }
   };
 
