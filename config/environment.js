@@ -20,7 +20,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'connect-src': "'self' http://climbingnarc.com http://vimeo.com",
       'font-src': "'self' http://*.gstatic.com",
-      'style-src': "'self' http://*.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' http://*.googleapis.com",
       'img-src': "'self' http://*.vimeocdn.com http://*.youtube.com"
     }
   };
