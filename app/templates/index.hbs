@@ -21,15 +21,15 @@
     {{else}}
     {{#if searchResults}}
       <div class="row">
-        {{#each searchResults}}
+        {{#each result in searchResults}}
 
         <div class="col-md-4 col-sm-6 video">
           <h4 class="video-title">
-            {{#link-to 'video' this}}
+            {{#link-to 'video' result}}
               {{{title}}}
             {{/link-to}}
           </h4>
-          {{#link-to 'video' this}}{{lazy-video url=embed_url classNames="embed-responsive embed-responsive-16by9"}}{{/link-to}}
+          {{#link-to 'video' result}}{{lazy-video url=result.embed_url classNames="embed-responsive embed-responsive-16by9"}}{{/link-to}}
         </div>
 
         {{/each}}
